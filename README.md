@@ -14,19 +14,15 @@ This GitHub repository contains code for a demo on agentic coding for science. T
 
 2. **Clone your fork and setup submodules**: Clone your forked repository to your local machine:
    ```bash
-   git clone --recurse-submodules <your-fork-url>
+   git clone --recursive <your-fork-url> <desired-path-here>
    ```
 
-3. **Create a git worktree**: To maintain a clean environment and practice advanced workflows, create a branch on a git worktree.
+3. **Open Google Antigravitye**: If you do not have the agy shortcut installed, simply choose open folder within Google Antigravity and navigate to the path you cloned to.
    ```bash
-   cd agentic_coding_demo
-   git worktree add ../my-demo-branch -b my-demo-branch
-   cd ../my-demo-branch
+   agy <desired-path-here>
    ```
 
 4. **Run the demo using Google Antigravity**:
-   - Open this project using Google Antigravity.
-   - You must have the Google Colab extension enabled in Antigravity.
    - Open `demo_notebook.ipynb` within Antigravity.
    - Ensure the Colab session is connected to a TPU runtime.
    - Run the setup cells to install the necessary packages (`jax[tpu]`, `flax`, `tensorflow`, `jaxlib`) and restart the kernel when prompted.
