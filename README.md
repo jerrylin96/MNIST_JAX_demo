@@ -10,7 +10,7 @@ This GitHub repository contains code for a demo on agentic coding for science. T
 
 ## Setup Instructions
 
-1. **Fork the repository**: Navigate to [Agentic Coding Demo](https://github.com/jerrylin/agentic_coding_demo) (or the correct GitHub URL) and click the "Fork" button in the top right.
+1. **Fork the repository**: Click the "Fork" button in the top right and navigate to your new fork.
 
 2. **Clone your fork and setup submodules**: Clone your forked repository to your local machine:
    ```bash
