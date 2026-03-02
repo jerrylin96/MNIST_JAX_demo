@@ -17,7 +17,7 @@ This GitHub repository contains code for a demo on agentic coding for science. T
    git clone --recursive <your-fork-url> <desired-path-here>
    ```
 
-3. **Open Google Antigravitye**: If you do not have the agy shortcut installed, simply choose open folder within Google Antigravity and navigate to the path you cloned to.
+3. **Open Google Antigravity**: If you do not have the agy shortcut installed, simply choose open folder within Google Antigravity and navigate to the path you cloned to.
    ```bash
    agy <desired-path-here>
    ```
