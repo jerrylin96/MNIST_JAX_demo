@@ -1,5 +1,7 @@
 .venv/
 saved_models/
 training_curves.png
+training_curves_convnext.png
 predictions.png
+predictions_convnext.png
 __pycache__/
