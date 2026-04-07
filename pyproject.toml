@@ -13,4 +13,6 @@ dependencies = [
     "tensorflow-datasets",
     "orbax-export",
     "matplotlib",
+    "importlib-resources>=6.5.2",
+    "protobuf<5",
 ]
