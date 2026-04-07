@@ -6,32 +6,49 @@ This GitHub repository contains code for a demo on agentic coding for science. T
 ## Contents
 
 - `demo_notebook.ipynb`: A Google Colab notebook demonstrating how to train a convolutional neural network (CNN) on the MNIST dataset using JAX and the Flax NNX API. It is optimized for Cloud TPUs. This is based off the [official Flax MNIST tutorial](https://flax.readthedocs.io/en/latest/mnist_tutorial.html).
+- `main.py`: A standalone Python script that performs the same training, evaluation, inference, and model export as the notebook, suitable for running locally.
 - `bonsai/`: A git submodule linking to the [JAX Bonsai repository](https://github.com/jax-ml/bonsai).
 
-## Instructions
+## Setup
 
-1. **Fork the repository**: Click the "Fork" button in the top right and navigate to your new fork.
+### Prerequisites
 
-2. **Clone your fork and setup submodules**: Clone your forked repository to your local machine:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Installation
+
+1. **Fork and clone the repository**:
    ```bash
-   git clone --recursive <your-fork-url> <desired-path-here>
+   git clone --recursive <your-fork-url>
+   cd MNIST_JAX_demo
    ```
 
-3. **Open Google Antigravity**: If you do not have the agy shortcut installed, simply choose open folder within Google Antigravity and navigate to the path you cloned to.
+2. **Install dependencies**:
    ```bash
-   agy <desired-path-here>
+   uv sync
    ```
+   This will automatically install the correct Python version (3.12) and all dependencies.
 
-4. **Run `demo_notebook.ipynb` on TPU**:
-   - Open `demo_notebook.ipynb` within Antigravity.
-   - Ensure the Colab session is connected to a Google Colab TPU runtime.
-   - Run the setup cells to install the necessary packages (`jax[tpu]`, `flax`, `tensorflow`, `jaxlib`) and restart the kernel when prompted.
-   - The notebook will automatically mount your Google Drive to save data and output models.
+3. **Run the training script**:
+   ```bash
+   uv run python main.py
+   ```
+   This trains a CNN on MNIST, saves training curves to `training_curves.png`, sample predictions to `predictions.png`, and exports the model to `saved_models/demo_model/`.
 
-5. **Understand codebase and iterate with Gemini Code Assist and Agent Manager**:
-   - Use Gemini Code Assist on the left panel to tag the notebook and ask questions about it.
-   - Inside the notebook, use `cmd + I` (for mac) or `ctrl + I` (for windows) in individual cells to add additional documentation where unclear.
-   - Use the Agent Manager (top right) to ask the agent to come up with a plan to create a new, separate version of `demo_notebook.ipynb` that uses an advanced architecture from bonsai, keeping in mind that the Google Colab TPU kernel can only see inside the Google Drive folder and that bonsai was git cloned in that folder earlier.
-   - Comment on the plan where necessary and allow the agent to execute once you are aligned.
-   - Continue to iterate as needed.
+## Running on Google Colab (TPU)
 
+1. Open `demo_notebook.ipynb` within Google Colab or Antigravity.
+2. Ensure the Colab session is connected to a Google Colab TPU runtime.
+3. Run the setup cells to install the necessary packages and restart the kernel when prompted.
+4. The notebook will automatically mount your Google Drive to save data and output models.
+
+## Using with Agentic Coding Tools
+
+- Use Gemini Code Assist on the left panel to tag the notebook and ask questions about it.
+- Inside the notebook, use `cmd + I` (for mac) or `ctrl + I` (for windows) in individual cells to add additional documentation where unclear.
+- Use the Agent Manager (top right) to ask the agent to come up with a plan to create a new, separate version of `demo_notebook.ipynb` that uses an advanced architecture from bonsai, keeping in mind that the Google Colab TPU kernel can only see inside the Google Drive folder and that bonsai was git cloned in that folder earlier.
+- Comment on the plan where necessary and allow the agent to execute once you are aligned.
+- Continue to iterate as needed.

@@ -1,0 +1,5 @@
+.venv/
+saved_models/
+training_curves.png
+predictions.png
+__pycache__/
